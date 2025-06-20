@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-yellow-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AZalvora Admin Panel</title>
+  <script src="admin-script.js" defer></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="font-sans">
+  <!-- Header -->
+  <header class="text-center p-5 bg-yellow-300 text-black text-2xl font-bold">
+    AZalvora Admin Panel
+  </header>
+
+  <!-- Login Form -->
+  <section class="p-6 max-w-md mx-auto mt-10 bg-gray-900 rounded-2xl shadow-xl">
+    <h2 class="text-xl font-bold mb-4">Admin Login (WhatsApp OTP)</h2>
+    <form id="loginForm">
+      <input type="text" id="phone" class="w-full p-2 rounded mb-3 text-black" placeholder="Enter your WhatsApp number" required />
+      <button type="submit" class="w-full bg-yellow-300 text-black font-semibold py-2 rounded hover:bg-yellow-400">Send OTP</button>
+    </form>
+    <form id="otpForm" class="hidden mt-4">
+      <input type="text" id="otp" class="w-full p-2 rounded mb-3 text-black" placeholder="Enter OTP" required />
+      <button type="submit" class="w-full bg-green-500 text-white font-semibold py-2 rounded hover:bg-green-600">Verify</button>
+    </form>
+    <p class="text-sm mt-4">
+      By continuing, you agree to our 
+      <a href="#" onclick="showPolicy('terms')" class="underline">Terms of Use</a> & 
+      <a href="#" onclick="showPolicy('privacy')" class="underline">Privacy Policy</a>.
+    </p>
+  </section>
+
+  <!-- Product Catalog -->
+  <section class="mt-10 max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">Manage Products</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="productCatalog">
+      <div class="bg-gray-800 p-4 rounded-xl shadow hover:scale-105 transition">
+        <img src="https://via.placeholder.com/150" alt="Product" class="rounded mb-2">
+        <h3 class="font-bold">Bruté Intense</h3>
+        <p class="text-sm">Rs. 2,999</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-xl shadow hover:scale-105 transition">
+        <img src="https://via.placeholder.com/150" alt="Product" class="rounded mb-2">
+        <h3 class="font-bold">Noir Royal</h3>
+        <p class="text-sm">Rs. 3,499</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white text-black p-6 rounded max-w-lg">
+      <h2 id="modalTitle" class="text-xl font-bold mb-4">Policy</h2>
+      <p id="modalContent" class="text-sm max-h-60 overflow-y-auto"></p>
+      <button onclick="closeModal()" class="mt-4 bg-yellow-300 px-4 py-2 rounded">Close</button>
+    </div>
+  </div>
+</body>
+</html>

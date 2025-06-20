@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-yellow-300">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AZalvora Admin Panel</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    function handleCredentialResponse(response) {
+      const data = jwt_decode(response.credential);
+      const allowedEmail = "azalvora.pk@gmail.com";
+
+      if (data.email === allowedEmail) {
+        document.getElementById("loginDiv").classList.add("hidden");
+        document.getElementById("adminPanel").classList.remove("hidden");
+        document.getElementById("adminName").innerText = data.name;
+      } else {
+        alert("Access denied: This email is not authorized.");
+      }
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+</head>
+<body class="p-10">
+  <h1 class="text-3xl font-bold mb-6">Admin Login</h1>
+
+  <div id="loginDiv">
+    <div id="g_id_onload"
+         data-client_id="693930936627-c7j4l5q3pmjc4q8l1rrg9p1hglbse52g.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin"
+         data-type="standard"
+         data-shape="rectangular"
+         data-theme="filled_black"
+         data-text="signin_with"
+         data-size="large"
+         data-logo_alignment="left">
+    </div>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <h2 class="text-2xl mb-4">Welcome, <span id="adminName"></span> 👑</h2>
+    <p>You are now logged into the admin panel.</p>
+    <!-- You can add product management, order viewing etc here -->
+  </div>
+</body>
+</html>

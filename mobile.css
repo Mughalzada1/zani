@@ -1,0 +1,63 @@
+/* ---------------------------
+   📱 Mobile Responsive Design
+---------------------------- */
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .product {
+    margin-bottom: 20px;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+
+  a, button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+  }
+
+  .stars span {
+    font-size: 24px;
+  }
+}
+
+/* ---------------------------
+   🖥️ Big Screens - Optional
+---------------------------- */
+
+@media (min-width: 1024px) {
+  .products-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AZalvora – Premium Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Welcome to AZalvora</h1>
+  <a href="https://wa.me/923017206508" target="_blank">Order on WhatsApp</a>
+
+  <!-- Glasses Section -->
+  <div class="products-section">
+    <h2>Our Signature Glasses</h2>
+
+    <div class="product">
+      <img src="glasses1.jpg" alt="Classic Black Shades">
+      <h3>Classic Black Shades</h3>
+      <p>Price: Rs. 2,500</p>
+      <a href="https://wa.me/923017206508?text=I%20want%20to%20order%20Classic%20Black%20Shades" target="_blank">Order Now</a>
+    </div>
+
+    <div class="product">
+      <img src="glasses2.jpg" alt="Golden Aviator">
+      <h3>Golden Aviator</h3>
+      <p>Price: Rs. 3,200</p>
+      <a href="https://wa.me/923017206508?text=I%20want%20to%20order%20Golden%20Aviator" target="_blank">Order Now</a>
+    </div>
+  </div>
+
+  <!-- Rating Section -->
+  <div class="rating-section">
+    <h2>Rate Our Store</h2>
+    <div class="stars">
+      <span onclick="rate(1)">⭐</span>
+      <span onclick="rate(2)">⭐</span>
+      <span onclick="rate(3)">⭐</span>
+      <span onclick="rate(4)">⭐</span>
+      <span onclick="rate(5)">⭐</span>
+    </div>
+    <p id="rating-result"></p>
+  </div>
+
+  <!-- Comments -->
+  <div class="comment-section">
+    <h2>Customer Comments</h2>
+    <textarea id="commentInput" placeholder="Write your comment"></textarea>
+    <button onclick="postComment()">Post Comment</button>
+    <div id="comments"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <!-- Login Form -->
+  <section class="p-6 max-w-md mx-auto mt-10 bg-gray-900 rounded-2xl shadow-xl">
+    <h2 class="text-xl font-bold mb-4">Sign Up / Login</h2>
+    <form id="loginForm">
+      <input type="text" id="phone" class="w-full p-2 rounded mb-3 text-black" placeholder="Enter your WhatsApp number" required />
+      <button type="submit" class="w-full bg-yellow-300 text-black font-semibold py-2 rounded hover:bg-yellow-400">Send OTP</button>
+    </form>
+    <form id="otpForm" class="hidden mt-4">
+      <input type="text" id="otp" class="w-full p-2 rounded mb-3 text-black" placeholder="Enter OTP" required />
+      <button type="submit" class="w-full bg-green-500 text-white font-semibold py-2 rounded hover:bg-green-600">Verify</button>
+    </form>
+    <p class="text-sm mt-4">
+      By continuing, you agree to our 
+      <a href="#" onclick="showPolicy('terms')" class="underline">Terms of Use</a> & 
+      <a href="#" onclick="showPolicy('privacy')" class="underline">Privacy Policy</a>.
+    </p>
+  </section>
+
+
+  <!-- Product Catalog -->
+  <section class="mt-10 max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">Our Products</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="productCatalog">
+      <div class="bg-gray-800 p-4 rounded-xl shadow hover:scale-105 transition">
+        <img src="https://via.placeholder.com/150" alt="Product" class="rounded mb-2">
+        <h3 class="font-bold">Bruté Intense</h3>
+        <p class="text-sm">Rs. 2,999</p>
+      </div>
+    
+<div class="bg-gray-800 p-4 rounded-xl shadow hover:scale-105 transition">
+  <img src="valor-intense.jpg" alt="Valor Intense" class="rounded mb-2">
+  <h3 class="font-bold">AZALVORA Valor Intense</h3>
+  <p class="text-sm">Rs. 2,999</p>
+</div>
+
+
+<div class="bg-gray-800 p-4 rounded-xl shadow hover:scale-105 transition">
+  <img src="glasses-golden.jpg" alt="Luxury Glasses" class="rounded mb-2">
+  <h3 class="font-bold">Luxury Glasses</h3>
+  <p class="text-sm">Rs. 999</p>
+</div>
+
+</div>
+  </section>
+
+
+  <!-- Modals -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+    <div class="bg-white text-black p-6 rounded max-w-lg">
+      <h2 id="modalTitle" class="text-xl font-bold mb-4">Policy</h2>
+      <p id="modalContent" class="text-sm max-h-60 overflow-y-auto"></p>
+      <button onclick="closeModal()" class="mt-4 bg-yellow-300 px-4 py-2 rounded">Close</button>
+    </div>
+  </div>
